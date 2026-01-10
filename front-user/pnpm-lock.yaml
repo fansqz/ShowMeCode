@@ -108,8 +108,8 @@ importers:
         specifier: ^3.1.5
         version: 3.2.0(vue@3.5.17(typescript@5.8.3))
       structv2:
-        specifier: github:leaf-dawn/StructV2
-        version: git+https://git@github.com:leaf-dawn/StructV2.git#9f926e330591520d0da43dd73fbb7911c943cc70
+        specifier: github:fansqz/StructV2
+        version: git+https://git@github.com:fansqz/StructV2.git#9f926e330591520d0da43dd73fbb7911c943cc70
       stylelint:
         specifier: ^15.10.2
         version: 15.11.0(typescript@5.8.3)
@@ -3999,8 +3999,8 @@ packages:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
 
-  structv2@git+https://git@github.com:leaf-dawn/StructV2.git#9f926e330591520d0da43dd73fbb7911c943cc70:
-    resolution: {commit: 9f926e330591520d0da43dd73fbb7911c943cc70, repo: git@github.com:leaf-dawn/StructV2.git, type: git}
+  structv2@git+https://git@github.com:fansqz/StructV2.git#9f926e330591520d0da43dd73fbb7911c943cc70:
+    resolution: {commit: 9f926e330591520d0da43dd73fbb7911c943cc70, repo: git@github.com:fansqz/StructV2.git, type: git}
     version: 0.0.16
 
   style-search@0.1.0:
@@ -8924,7 +8924,7 @@ snapshots:
 
   strip-json-comments@3.1.1: {}
 
-  structv2@git+https://git@github.com:leaf-dawn/StructV2.git#9f926e330591520d0da43dd73fbb7911c943cc70:
+  structv2@git+https://git@github.com:fansqz/StructV2.git#9f926e330591520d0da43dd73fbb7911c943cc70:
     dependencies:
       '@antv/g6': 4.8.25
       merge: 2.1.1

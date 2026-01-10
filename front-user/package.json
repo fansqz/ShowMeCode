@@ -55,7 +55,7 @@
     "progress": "^2.0.3",
     "qs": "^6.11.2",
     "splitpanes": "^3.1.5",
-    "structv2": "github:leaf-dawn/StructV2",
+    "structv2": "github:fansqz/StructV2",
     "stylelint": "^15.10.2",
     "stylelint-config-recess-order": "^4.3.0",
     "stylelint-config-standard": "^34.0.0",
