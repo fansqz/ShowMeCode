@@ -1,7 +1,7 @@
 package debugger
 
 import (
-	"github.com/fansqz/go-debugger/constants"
+	"github.com/fansqz/ShowMeCode/go-debugger/constants"
 )
 
 // StartOption 启动调试的参数

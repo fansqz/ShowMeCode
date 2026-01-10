@@ -11,11 +11,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/fansqz/go-debugger/constants"
-	. "github.com/fansqz/go-debugger/debugger"
-	. "github.com/fansqz/go-debugger/debugger/gdb_debugger"
-	"github.com/fansqz/go-debugger/debugger/gdb_debugger/gdb"
-	"github.com/fansqz/go-debugger/debugger/utils"
+	"github.com/fansqz/ShowMeCode/go-debugger/constants"
+	. "github.com/fansqz/ShowMeCode/go-debugger/debugger"
+	. "github.com/fansqz/ShowMeCode/go-debugger/debugger/gdb_debugger"
+	"github.com/fansqz/ShowMeCode/go-debugger/debugger/gdb_debugger/gdb"
+	"github.com/fansqz/ShowMeCode/go-debugger/debugger/utils"
 	"github.com/google/go-dap"
 	"github.com/sirupsen/logrus"
 )

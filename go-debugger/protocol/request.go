@@ -1,6 +1,6 @@
 package protocol
 
-import "github.com/fansqz/go-debugger/constants"
+import "github.com/fansqz/ShowMeCode/go-debugger/constants"
 
 type RequestInterface interface {
 	GetSequence() uint

@@ -2,7 +2,7 @@ package utils
 
 import (
 	"context"
-	"github.com/fansqz/go-debugger/utils/gosync"
+	"github.com/fansqz/ShowMeCode/go-debugger/utils/gosync"
 	"github.com/sirupsen/logrus"
 	"time"
 )

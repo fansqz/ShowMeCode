@@ -3,7 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"github.com/fansqz/go-debugger/debugger"
+	"github.com/fansqz/ShowMeCode/go-debugger/debugger"
 	"github.com/google/go-dap"
 	"io"
 	"log"

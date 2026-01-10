@@ -10,8 +10,8 @@ import (
 
 	"github.com/google/go-dap"
 
-	"github.com/fansqz/go-debugger/debugger"
-	"github.com/fansqz/go-debugger/utils"
+	"github.com/fansqz/ShowMeCode/go-debugger/debugger"
+	"github.com/fansqz/ShowMeCode/go-debugger/utils"
 	"github.com/stretchr/testify/assert"
 )
 
