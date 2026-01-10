@@ -1,5 +1,8 @@
 FROM golang:1.24.1-bookworm
 
+# 保留原有工作目录
+WORKDIR /var/fancode
+
 USER root
 
 # 保留：设置上海时区（与原有逻辑一致）
@@ -19,6 +22,7 @@ ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.io,direct
 ENV GOSUMDB=sum.golang.google.cn
 
-RUN go install github.com/fansqz/ShowMeCode/go-debugger@v0.0.1
+RUN go install github.com/fansqz/delve/cmd/dlv@v1.24.5
+RUN go install github.com/fansqz/go-debugger@v1.0.22
 
 EXPOSE 8080

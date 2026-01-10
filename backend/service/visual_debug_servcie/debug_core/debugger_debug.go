@@ -232,7 +232,7 @@ func (d *debugger) compile(ctx context.Context, compileFiles []string) *CompileE
 			break
 		}
 		logger.WithCtx(ctx).Infof("[compile] 目录 %s 下的完整文件列表：%s", d.workPath, output)
-		output, err, exitCode = d.docker.Exec(ctx, []string{"go", "-C", d.workPath, "mod", "init"})
+		output, err, exitCode = d.docker.Exec(ctx, []string{"go", "-C", d.workPath, "mod", "init", "main"})
 		if err != nil {
 			logger.WithCtx(ctx).Errorf("[compile] exec fail, err = %s", err)
 			break
