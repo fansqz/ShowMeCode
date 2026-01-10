@@ -1,7 +1,4 @@
-FROM golang:1.24.1-bionic
-
-# 保留原有工作目录
-WORKDIR /var/fancode
+FROM golang:1.24.1-bookworm
 
 USER root
 
@@ -18,16 +15,10 @@ RUN apt-get update && \
     git gcc gdb python3 wget tar && \
     rm -rf /var/lib/apt/lists/*
 
-# Java 8安装
-RUN apt-get update && \
-    apt-get install -y openjdk-8-jdk && \
-    rm -rf /var/lib/apt/lists/*
-
-
 ENV GO111MODULE=on
 ENV GOPROXY=https://goproxy.io,direct
 ENV GOSUMDB=sum.golang.google.cn
 
-RUN go install github.com/fansqz/go-debugger@v1.0.22
+RUN go install github.com/fansqz/ShowMeCode/go-debugger@v0.0.1
 
 EXPOSE 8080
