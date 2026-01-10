@@ -1,0 +1,25 @@
+:deep(.debug-line) {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background: linear-gradient(90deg, rgb(255 138 128 / 18%) 0%, rgb(255 183 131 / 10%) 100%);
+  border: 1px solid $warning-color;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px 0 rgba($warning-color, 0.1), 0 1.5px 0 0 rgba($base-background-color, 0.1) inset;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+:deep(.debug-icon) {
+  &::before {
+    position: relative;
+    padding-left: 15px;
+    content: "\e631";
+  }
+
+  /* 断点遇到调试的箭头就让箭头消失 */
+  &.breakpoint {
+    &::before {
+      display: none;
+    }
+  }
+}

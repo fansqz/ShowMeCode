@@ -1,0 +1,116 @@
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.TemporaryItems
+.fseventsd
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDouble
+.LSOverride
+
+# =========================
+# IDE and Editors
+# =========================
+.idea/
+.vscode/
+*.sublime*
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.project
+__debug_bin
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =========================
+# Node.js
+# =========================
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# =========================
+# Go
+# =========================
+*.test
+*.out
+*.prof
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+/go_build_*
+
+# =========================
+# Compiled Files
+# =========================
+*.com
+*.class
+*.dll
+*.exe
+*.exe~
+*.o
+*.so
+
+# =========================
+# Archives
+# =========================
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# =========================
+# Database
+# =========================
+*.sqlite
+*.db
+
+# =========================
+# Temp Files
+# =========================
+tmp/
+.tmp/
+.history/
+
+# =========================
+# Environment & Secrets
+# =========================
+.env
+.env.local
+.env.*.local
+
+# =========================
+# Cache
+# =========================
+.stylelintcache
+
+# =========================
+# Project Specific
+# =========================
+gohub
+out/

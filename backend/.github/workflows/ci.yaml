@@ -1,0 +1,80 @@
+name: ci
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      GO_VERSION: '1.23.2'
+      GO111MODULE: on
+      REGISTRY: git.showmecode.net
+      IMAGE_NAME: fansqz/fancode
+      DOCKER_API_VERSION: 1.43
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: set up Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: ${{ env.GO_VERSION }}
+
+      - name: prepare dependencies
+        run: |
+          sudo sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apt/sources.list
+          sudo apt-get update
+          sudo apt-get install -y tzdata
+          sudo cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+          echo "Asia/Shanghai" | sudo tee /etc/timezone
+
+      - name: prepare gdb
+        run: sudo apt-get install -y gcc gdb python3 openjdk-8-jre
+
+      - name: prepare go dependencies
+        run: |
+          go mod download
+
+      - name: build
+        run: GOOS=linux go build -a -installsuffix cgo -o fancode
+
+      - name: test
+        run: sudo go test -v ./...
+
+      # 删除打的可执行文件，然后打镜像减少体积
+      - name: remove binary
+        run: rm -rf fancode
+
+      # Set up BuildKit Docker container builder to be able to build
+      # multi-platform images and export cache
+      # https://github.com/docker/setup-buildx-action
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@f95db51fddba0c2d1ec667646a06c2ce06100226 # v3.0.0
+
+      - name: login to registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.TOKEN }}
+
+      # Extract metadata (tags, labels) for Docker
+      # https://github.com/docker/metadata-action
+      - name: Extract Docker metadata
+        id: meta
+        uses: docker/metadata-action@96383f45573cb7f253c731d3b3ab81c87ef81934 # v5.0.0
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      # Build and push Docker image with Buildx
+      # https://github.com/docker/build-push-action
+      - name: Build and push Docker image
+        id: build-and-push
+        uses: docker/build-push-action@0565240e2d4ab88bba5387d719585280857ece09 # v5.0.0
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

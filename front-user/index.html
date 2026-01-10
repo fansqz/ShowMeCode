@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=1200, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="🎉让数据结构与算法学习变得轻松简单！ShowMeCode支持在线编辑调试，代码运行结果实时呈现，助你快速发现并解决代码问题。更有运行时数据结构可视化功能，以直观图形展示复杂结构变化，让抽象知识变得一目了然！！！"
+    />
+    <meta
+      name="keywords"
+      content="数据结构,算法,在线调试,数据结构可视化,编程学习,代码可视化,算法可视化,在线编程,编程教育"
+    />
+    <meta name="author" content="ShowMeCode" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="ShowMeCode-数据结构可视化" />
+    <meta
+      property="og:description"
+      content="让数据结构与算法学习变得轻松简单！支持在线编辑调试，代码运行结果实时呈现，助你快速发现并解决代码问题。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://showmecode.com" />
+    <meta property="og:image" content="/logo.png" />
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <link rel="canonical" href="https://showmecode.com" />
+    <title>ShowMeCode-数据结构可视化 | 在线编程学习平台</title>
+    <script>
+      function isLocalDomain(hostname) {
+        // 检查是否为 localhost
+        if (hostname === 'localhost') {
+          return true
+        }
+        // 检查是否为 IPv4 本地回环地址
+        if (hostname === '127.0.0.1') {
+          return true
+        }
+        // 检查是否为 IPv6 本地回环地址
+        if (hostname === '::1') {
+          return true
+        }
+        // 检查是否为常见的本地局域网 IPv4 地址段
+        const localIpRanges = [/^192\.168\./, /^10\./, /^172\.(1[6-9]|2[0-9]|3[0-1])\./]
+        for (const range of localIpRanges) {
+          if (range.test(hostname)) {
+            return true
+          }
+        }
+        return false
+      }
+
+      const hostname = window.location.hostname
+      // 检查非本地访问才进行统计
+      if (!isLocalDomain(hostname)) {
+        // 百度统计
+        var _hmt = _hmt || []
+        ;(function () {
+          var hm = document.createElement('script')
+          hm.src = 'https://hm.baidu.com/hm.js?236a2e49e197b6037eea0fb1b3d51414'
+          var s = document.getElementsByTagName('script')[0]
+          s.parentNode.insertBefore(hm, s)
+        })()
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

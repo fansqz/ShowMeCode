@@ -1,0 +1,33 @@
+FROM golang:1.24.1-bionic
+
+# 保留原有工作目录
+WORKDIR /var/fancode
+
+USER root
+
+# 保留：设置上海时区（与原有逻辑一致）
+RUN apt-get update && \
+    apt-get install -y tzdata && \
+    ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo "Asia/Shanghai" > /etc/timezone && \
+    rm -rf /var/lib/apt/lists/*
+
+# 保留：安装编译器、调试工具、Python3
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    git gcc gdb python3 wget tar && \
+    rm -rf /var/lib/apt/lists/*
+
+# Java 8安装
+RUN apt-get update && \
+    apt-get install -y openjdk-8-jdk && \
+    rm -rf /var/lib/apt/lists/*
+
+
+ENV GO111MODULE=on
+ENV GOPROXY=https://goproxy.io,direct
+ENV GOSUMDB=sum.golang.google.cn
+
+RUN go install github.com/fansqz/go-debugger@v1.0.22
+
+EXPOSE 8080

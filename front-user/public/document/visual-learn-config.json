@@ -1,0 +1,38 @@
+[
+  {
+    "code": "",
+    "language": "c",
+    "breakpoints": [4],
+    "visualSetting": {
+      "type": "array",
+      "description": {
+        "arrayName": "arr",
+        "pointNames": ["i", "j"]
+      }
+    }
+  },
+  {
+    "code": "",
+    "language": "cpp",
+    "breakpoints": [6],
+    "visualSetting": {
+      "type": "array",
+      "description": {
+        "arrayName": "arr",
+        "pointNames": ["i", "j"]
+      }
+    }
+  },
+  {
+    "code": "",
+    "language": "go",
+    "breakpoints": [6],
+    "visualSetting": {
+      "type": "array",
+      "description": {
+        "arrayName": "arr",
+        "pointNames": ["i", "j"]
+      }
+    }
+  }
+]

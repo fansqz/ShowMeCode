@@ -1,0 +1,16 @@
+:deep(.debug-line) {
+  background-color: #ebb563;
+}
+:deep(.debug-icon) {
+  &::before {
+    content: "\e631";
+    position: relative;
+    padding-left: 15px;
+  }
+  /* 断点遇到调试的箭头就让箭头消失 */
+  &.breakpoint {
+    &::before {
+      display: none;
+    }
+  }
+}

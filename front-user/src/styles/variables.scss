@@ -1,0 +1,57 @@
+// ===========================================
+// 项目自定义变量 - 使用CSS Variables与Element Plus配合
+// ===========================================
+
+// 布局相关变量
+$header-height: var(--project-header-height, 45px);
+
+// 圆角变量
+$border-radius-small: var(--project-border-radius-small, 4px);
+$border-radius-medium: var(--project-border-radius-medium, 8px);
+$border-radius-large: var(--project-border-radius-large, 12px);
+$border-radius-xl: var(--project-border-radius-xl, 16px);
+
+// 状态颜色变量
+$success-color: #67c23a;
+$warning-color: #e6a23c;
+$error-color: #f56c6c;
+$info-color: #909399;
+$primary-color: #409eff;
+
+// 项目自定义背景色变量 - 使用项目自定义CSS Variables
+$base-background-color: var(--project-bg-color);
+$base-header-background: var(--project-header-bg);
+$deep-background-color: var(--project-bg-deep);
+$card-header-color: var(--project-card-header);
+$show-background-color: var(--project-show-background);
+$bg-color-secondary: var(--project-bg-secondary);
+
+// 项目自定义文本颜色变量 - 使用Element Plus的CSS Variables
+$text-color: var(--el-text-color-primary);
+$text-color-primary: var(--el-text-color-primary);
+$text-color-regular: var(--el-text-color-regular);
+$text-color-secondary: var(--el-text-color-secondary);
+$text-color-placeholder: var(--el-text-color-placeholder);
+$text-color-disabled: var(--el-text-color-disabled);
+
+// 项目自定义边框颜色变量 - 使用Element Plus的CSS Variables
+$border-color: var(--el-border-color);
+$border-color-light: var(--el-border-color-light);
+$border-color-lighter: var(--el-border-color-lighter);
+$border-color-extra-light: var(--el-border-color-extra-light);
+
+// 项目自定义填充颜色变量 - 使用Element Plus的CSS Variables
+$fill-color: var(--el-fill-color);
+$fill-color-light: var(--el-fill-color-light);
+$fill-color-lighter: var(--el-fill-color-lighter);
+$fill-color-extra-light: var(--el-fill-color-extra-light);
+
+// 项目自定义阴影变量 - 使用Element Plus的CSS Variables
+$box-shadow: var(--el-box-shadow);
+$box-shadow-light: var(--el-box-shadow-light);
+$box-shadow-lighter: var(--el-box-shadow-lighter);
+$box-shadow-dark: var(--el-box-shadow-dark);
+
+// 项目自定义遮罩颜色变量 - 使用Element Plus的CSS Variables
+$mask-color: var(--el-mask-color);
+$mask-color-extra-light: var(--el-mask-color-extra-light);

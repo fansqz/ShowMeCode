@@ -1,0 +1,77 @@
+// 引入清除默认样式
+@import url('./reset.scss');
+@import url('//at.alicdn.com/t/c/font_4226412_ayxqoicyump.css');
+
+// 全局变量已在 vite.config.ts 中通过 additionalData 自动注入，无需重复导入
+
+
+// 滚动条外观设置
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $base-header-background;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: #c1c1c1;
+  border-radius: 10px;
+  
+  &:hover {
+    background-color: #a8a8a8;
+  }
+}
+
+// 暗黑模式滚动条样式
+html.dark {
+  ::-webkit-scrollbar-track {
+    background: $base-background-color;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: $border-color;
+    
+    &:hover {
+      background-color: $border-color-light;
+    }
+  }
+}
+
+// elementui下拉框黑框去除
+.el-tooltip__trigger:focus-visible {
+  outline: unset;
+}
+
+// 分割条样式 - 使用CSS Variables
+.el-splitter-bar::before {
+  background-color: transparent !important;
+}
+
+// 使用 :active 伪类作为备选方案
+.el-splitter-bar:active::before {
+  background-color: $primary-color !important;
+}
+
+.el-splitter-bar .el-splitter-bar__dragger:active::before {
+  background-color: $primary-color !important;
+}
+
+// 水平分割符
+.el-splitter-bar .el-splitter-bar__dragger-horizontal::before {
+  background-color: transparent !important;
+}
+
+.el-splitter-bar .el-splitter-bar__dragger-horizontal:hover::before {
+  background-color: $primary-color !important;
+}
+
+// 垂直分割符
+.el-splitter-bar .el-splitter-bar__dragger-vertical::before {
+  background-color: transparent !important;
+}
+
+.el-splitter-bar .el-splitter-bar__dragger-vertical:hover::before {
+  background-color: $primary-color !important;
+}

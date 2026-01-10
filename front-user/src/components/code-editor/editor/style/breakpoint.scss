@@ -1,0 +1,29 @@
+:deep(.breakpoint) {
+  left: 10px !important;
+  box-sizing: border-box;
+  width: 11px !important;
+  height: 11px !important;
+  margin-top: 3px !important;
+  cursor: pointer;
+  background: $error-color;
+  border-radius: 50%;
+
+  &.active {
+    opacity: 1 !important;
+  }
+
+  &.hide {
+    opacity: 0.4 !important;
+  }
+
+  /** 扩大鼠标可点击区域 */
+  &::before {
+    position: absolute;
+    padding: 10px;
+    padding-left: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    content: "";
+    background-color: transparent;
+  }
+}

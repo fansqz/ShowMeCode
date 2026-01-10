@@ -1,0 +1,35 @@
+/* 自定义主题变量 - 覆盖Element Plus默认值 */
+
+html {
+  /* 项目自定义变量 - 亮色模式 */
+  --project-header-height: 45px;
+  --project-border-radius-small: 4px;
+  --project-border-radius-medium: 8px;
+  --project-border-radius-large: 12px;
+  --project-border-radius-xl: 16px;
+  
+  /* 项目自定义背景色 - 与Element Plus亮色模式保持一致 */
+  --project-bg-color: #fff;
+  --project-header-bg: #fff;
+  --project-bg-deep: rgb(240 240 240);
+  --project-card-header: rgb(240 240 240);
+  --project-show-background: #fafafa;
+  --project-bg-secondary: #f5f7fa;
+  
+  /* 可视化背景点颜色 */
+  --project-dot-color: rgb(0 0 0 / 10%);
+}
+
+/* 暗黑模式自定义变量 */
+html.dark {
+  /* 项目自定义背景色 - 与Element Plus暗黑模式保持一致 */
+  --project-bg-color: #1d1e1f;
+  --project-header-bg: #1d1e1f;
+  --project-bg-deep: #1b1b1b;
+  --project-card-header: #262727;
+  --project-show-background: #2c2c2d;
+  --project-bg-secondary: #262727;
+  
+  /* 可视化背景点颜色 - 暗黑模式下使用浅色 */
+  --project-dot-color: rgb(255 255 255 / 10%);
+}
