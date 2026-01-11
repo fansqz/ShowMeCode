@@ -1,28 +1,33 @@
 <template>
-  <div class="container">
-    <div class="setting">
-      <el-avatar v-if="getAvatar() != ''" :src="getAvatar()" class="avatar" />
-      <el-avatar v-if="getAvatar() == ''" class="avatar">s</el-avatar>
-      <el-dropdown class="user_dropdown">
-        <span class="el-dropdown-link">
-          {{ getUsername() }}<el-icon class="el-icon--right"><arrow-down /></el-icon>
-        </span>
-        <template #dropdown v-if="isLogged()">
-          <el-dropdown-menu>
-            <!-- <el-dropdown-item @click="changeRoute('myprofile')">个人中心</el-dropdown-item> -->
-            <el-dropdown-item @click="changeRoute('accountSetting')">信息修改</el-dropdown-item>
-            <el-dropdown-item @click="logout">退出登录</el-dropdown-item>
-          </el-dropdown-menu>
-        </template>
-      </el-dropdown>
-    </div>
+  <div class="setting">
+    <el-avatar v-if="getAvatar()" :src="getAvatar()" :size="28" />
+    <el-avatar v-else :size="28">{{ getUsername().charAt(0) }}</el-avatar>
+    <el-dropdown>
+      <span class="user-trigger">
+        {{ getUsername() }}
+        <el-icon class="el-icon--right"><arrow-down /></el-icon>
+      </span>
+      <template #dropdown>
+        <el-dropdown-menu>
+          <el-dropdown-item @click="changeRoute('accountSetting')">信息修改</el-dropdown-item>
+          <el-dropdown-item @click="toggleTheme">
+            {{ isDark ? '浅色模式' : '深色模式' }}
+          </el-dropdown-item>
+          <el-dropdown-item divided @click="logout">退出登录</el-dropdown-item>
+        </el-dropdown-menu>
+      </template>
+    </el-dropdown>
   </div>
 </template>
 
 <script setup lang="ts">
   import useUserStore from '@/store/modules/user'
+  import useThemeStore from '@/store/modules/theme'
+  import { storeToRefs } from 'pinia'
   import { useRouter, useRoute } from 'vue-router'
   let userStore = useUserStore()
+  const themeStore = useThemeStore()
+  const { isDark } = storeToRefs(themeStore)
   let $router = useRouter()
   let $route = useRoute()
 
@@ -49,34 +54,26 @@
     }
     $router.push({ name: routeName, params })
   }
+
+  const toggleTheme = () => {
+    themeStore.toggleTheme()
+  }
 </script>
 
-<style scoped>
-  .container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 0;
+<style scoped lang="scss">
+  .setting {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-    .setting {
-      position: absolute;
+    .user-trigger {
       display: flex;
-      flex-direction: row;
       align-items: center;
-      justify-content: end;
-      width: 100%;
-      height: 100%;
-      margin-right: 30px;
+      cursor: pointer;
+      color: var(--el-text-color-primary);
 
-      .avatar {
-        width: 24px;
-        height: 24px;
-        margin-right: 10px;
-        border-radius: 50%;
-      }
-
-      .user_dropdown {
-        cursor: pointer;
+      &:hover {
+        color: var(--el-color-primary);
       }
     }
   }

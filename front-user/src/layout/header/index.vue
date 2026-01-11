@@ -30,14 +30,22 @@
       </div>
     </div>
     <div class="header_right">
-      <ThemeSwitcher class="theme-switcher" />
-      <Setting class="setting" v-show="isLogged()"></Setting>
-      <div class="login_button" v-show="!isLogged()">
-        <div class="login_content">
-          <el-button class="button" type="primary" @click="getoLogin()" link>登陆</el-button>
-          <el-text>/</el-text>
-          <el-button class="button" type="primary" @click="getoRegister()" link>注册</el-button>
-        </div>
+      <a
+        class="icon-btn"
+        href="https://github.com/fansqz/ShowMeCode"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <SvgIcon name="github" width="20px" height="20px" />
+      </a>
+      <div class="divider"></div>
+      <div class="user-area">
+        <Setting v-if="isLogged()" />
+        <template v-else>
+          <el-button type="primary" @click="getoLogin()" link>登录</el-button>
+          <el-text class="separator">/</el-text>
+          <el-button type="primary" @click="getoRegister()" link>注册</el-button>
+        </template>
       </div>
     </div>
   </div>
@@ -46,7 +54,6 @@
 <script setup lang="ts">
   import Logo from '@/components/logo/index.vue'
   import Setting from './setting.vue'
-  import ThemeSwitcher from '@/components/theme-switcher/index.vue'
   import { useRouter, useRoute } from 'vue-router'
   import useUserStore from '@/store/modules/user'
   import { onMounted, computed } from 'vue'
@@ -184,43 +191,44 @@
 
     .header_right {
       position: absolute;
-      right: 0%;
+      right: 0;
       display: flex;
-      flex-direction: row-reverse;
-      width: 50%;
+      align-items: center;
       height: 100%;
+      padding-right: 24px;
 
-      .login_button {
-        position: relative;
-        width: 160px;
-        height: 100%;
-
-        .login_content {
-          position: absolute;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 160px;
-          height: 100%;
-
-          .button {
-            margin: 10px;
-          }
-        }
-      }
-
-      .theme-switcher {
+      .icon-btn {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100%;
-        margin-right: 20px;
+        width: 32px;
+        height: 32px;
+        color: var(--el-text-color-regular);
+        cursor: pointer;
+        border-radius: 6px;
+        transition: all 0.2s;
+
+        &:hover {
+          color: var(--el-text-color-primary);
+          background-color: var(--el-fill-color-light);
+        }
       }
 
-      .setting {
-        width: 120px;
-        height: 100%;
-        margin-right: 30px;
+      .divider {
+        width: 1px;
+        height: 16px;
+        margin: 0 16px;
+        background-color: var(--el-border-color);
+      }
+
+      .user-area {
+        display: flex;
+        align-items: center;
+
+        .separator {
+          margin: 0 4px;
+          color: var(--el-text-color-secondary);
+        }
       }
     }
   }
