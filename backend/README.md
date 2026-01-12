@@ -57,7 +57,7 @@ backend/
 │
 ├── main.go                  # 入口
 ├── wire.go                  # 依赖注入配置
-└── fan_code.sql             # 数据库脚本
+└── showmecode.sql             # 数据库脚本
 ```
 
 ## 快速开始
@@ -176,4 +176,4 @@ api_key = xxx
 
 ## 数据库
 
-数据库 SQL 脚本位于 `./fan_code.sql`，可直接导入创建数据库表结构。
+数据库 SQL 脚本位于 `./showmecode.sql`，可直接导入创建数据库表结构。
